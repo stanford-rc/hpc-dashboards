@@ -1,0 +1,3370 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#70dbed",
+        "limit": 100,
+        "name": "",
+        "showIn": 0,
+        "tags": "",
+        "type": "dashboard"
+      },
+      {
+        "datasource": "Graphite",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#bf1b00",
+        "limit": 100,
+        "name": "Primary slurmctld failure",
+        "showIn": 0,
+        "tags": "sherlock slurm primary_slurmctld_failure",
+        "type": "tags"
+      },
+      {
+        "datasource": "Graphite",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#629e51",
+        "limit": 100,
+        "name": "Primary slurmctld resumed operations",
+        "showIn": 0,
+        "tags": "sherlock slurm primary_slurmctld_resumed_operation",
+        "type": "tags"
+      },
+      {
+        "datasource": "Graphite",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#7eb26d",
+        "limit": 100,
+        "name": "Primary slurmctld resumed control",
+        "showIn": 0,
+        "tags": "sherlock slurm primary_slurmctld_resumed_control",
+        "type": "tags"
+      },
+      {
+        "datasource": "Graphite",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#ef843c",
+        "limit": 100,
+        "name": "Backup slurmctld failure",
+        "showIn": 0,
+        "tags": "sherlock slurm backup_slurmctld_failure",
+        "type": "tags"
+      },
+      {
+        "datasource": "Graphite",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#1f78c1",
+        "limit": 100,
+        "name": "Backup slurmctld assumed control",
+        "showIn": 0,
+        "tags": "sherlock slurm backup_slurmctld_assumed_control",
+        "type": "tags"
+      },
+      {
+        "datasource": "Graphite",
+        "enable": true,
+        "hide": true,
+        "iconColor": "#badff4",
+        "limit": 100,
+        "name": "Backup slurmctld resumed operation",
+        "showIn": 0,
+        "tags": "sherlock slurm backup_slurmctld_resumed_operation",
+        "type": "tags"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "id": 109,
+  "iteration": 1569349829591,
+  "links": [],
+  "panels": [
+    {
+      "content": "## Running",
+      "editable": true,
+      "error": false,
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 0
+      },
+      "id": 39,
+      "links": [],
+      "mode": "markdown",
+      "options": {},
+      "style": {},
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(140, 140, 140, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 2,
+        "y": 0
+      },
+      "id": 21,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "0,0",
+      "title": "Running jobs",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 0
+      },
+      "id": 40,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus), 'running cpus')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "",
+      "title": "Running CPUs",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(35, 35, 35, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 8,
+        "y": 0
+      },
+      "id": 46,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "#3f683355",
+        "full": true,
+        "lineColor": "#7eb26d",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.gpu:*.RUNNING.gpus)",
+          "textEditor": true
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "Running GPUs",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 10,
+        "y": 0
+      },
+      "id": 24,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.*.nodes.{allocated,mixed,completing,draining}), 'down')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "",
+      "title": "Active Nodes",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 12,
+        "y": 0
+      },
+      "id": 31,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "countSeries(currentAbove(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 6, 'sum'), 0))",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "",
+      "title": "Active partitions",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "content": "## Down",
+      "editable": true,
+      "error": false,
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 14,
+        "y": 0
+      },
+      "id": 38,
+      "links": [],
+      "mode": "markdown",
+      "options": {},
+      "style": {},
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(35, 35, 35, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 16,
+        "y": 0
+      },
+      "id": 45,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.nodes.completing), 'down')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "50,75",
+      "title": "Completing nodes",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(35, 35, 35, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 18,
+        "y": 0
+      },
+      "id": 47,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.COMPLETING.jobs)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "100,150",
+      "title": "Completing jobs",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(35, 35, 35, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 25,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.nodes.{down,drained}), 'down')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "140,280",
+      "title": "Down nodes",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "content": "## Waiting\n",
+      "editable": true,
+      "error": false,
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 2
+      },
+      "id": 29,
+      "links": [],
+      "mode": "markdown",
+      "options": {},
+      "style": {},
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 3
+      },
+      "id": 22,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.PENDING.jobs), 'running jobs')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "",
+      "title": "Pending jobs",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 4,
+        "y": 3
+      },
+      "id": 23,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.PENDING.cpus), 'running cpus')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "",
+      "title": "Pending CPUs",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(35, 35, 35, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 8,
+        "y": 3
+      },
+      "id": 50,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "#3f683355",
+        "full": true,
+        "lineColor": "#7eb26d",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.gpu:*.PENDING.gpus)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "Pending GPUs",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.83)",
+        "rgba(45, 132, 172, 0.87)"
+      ],
+      "editable": true,
+      "error": false,
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 10,
+        "y": 3
+      },
+      "id": 19,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "</b>",
+      "postfixFontSize": "50%",
+      "prefix": "<b>",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": false,
+          "refId": "A",
+          "target": "asPercent(sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.cpus.allocated, '5min')), #B)",
+          "targetFull": "asPercent(sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.cpus.allocated, '5min')), sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.cpus_total))"
+        },
+        {
+          "hide": true,
+          "refId": "B",
+          "target": "sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.cpus_total, '5min'))"
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "Running CPUs (all)",
+      "type": "singlestat",
+      "valueFontSize": "200%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "content": "## Idle",
+      "editable": true,
+      "error": false,
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 3
+      },
+      "id": 34,
+      "links": [],
+      "mode": "markdown",
+      "options": {},
+      "style": {},
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 16,
+        "y": 3
+      },
+      "id": 27,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.*.nodes.idle), 'down')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "",
+      "title": "Idle nodes",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 3
+      },
+      "id": 30,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": true,
+          "refId": "A",
+          "target": "alias(scale(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus), -1), 'Running CPUs')",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refId": "B",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,test,gpu,bigmem,owners}.*.*.*.*.cpus_total), 'Total CPUs')"
+        },
+        {
+          "hide": false,
+          "refId": "C",
+          "target": "alias(sumSeries(#A, #B), 'Idle CPUs')"
+        }
+      ],
+      "thresholds": "",
+      "title": "Idle CPUs",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(35, 35, 35, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 20,
+        "y": 3
+      },
+      "id": 48,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "#3f683355",
+        "full": true,
+        "lineColor": "#7eb26d",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:4.nodes.*), 4)",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "B",
+          "target": "scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:8.nodes.*), 8)",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "C",
+          "target": "alias(sumSeries(#A, #B), 'total')",
+          "targetFull": "alias(sumSeries(scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:4.nodes.*), 4), scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:8.nodes.*), 8)), 'total')"
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "M",
+          "target": "alias(scale(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.gpu:*.RUNNING.gpus), -1), 'in_use')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "N",
+          "target": "alias(sumSeries(#C, #M), 'idle')",
+          "targetFull": "alias(sumSeries(alias(sumSeries(scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:4.nodes.*), 4), scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:8.nodes.*), 8)), 'total'), alias(scale(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.gpu:*.RUNNING.gpus), -1), 'in_use')), 'idle')"
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "Idle GPUs",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 3
+      },
+      "id": 35,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "B",
+          "target": "srcc.sherlock2.slurm.partition_count",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "A",
+          "target": "scale(countSeries(currentAbove(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 6, 'sum'), 0)), -1)",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "absolute(sumSeries(#A, #B))",
+          "targetFull": "absolute(sumSeries(scale(countSeries(currentAbove(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 6, 'sum'), 0)), -1), srcc.sherlock2.slurm.partition_count))"
+        }
+      ],
+      "thresholds": "",
+      "title": "Idle partitions",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {
+        "idle": "#1f78c1",
+        "mixed": "#806eb7",
+        "reboot": "#c15c17"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "editable": true,
+      "error": false,
+      "fill": 8,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 0,
+        "y": 5
+      },
+      "id": 8,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "maxDataPoints": "null",
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 1,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "total",
+          "color": "#BF1B00",
+          "fill": 0,
+          "linewidth": 2,
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "groupByNode(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.*.nodes.*, 10, 'sum')"
+        },
+        {
+          "hide": false,
+          "refId": "B",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.*.nodes.*), 'total')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Node states",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "RUNNING CPUs": "#6ED0E0",
+        "allocated": "#EAB839",
+        "idle": "#7EB26D",
+        "in_use": "#6ed0e0",
+        "other": "#E24D42",
+        "running": "#6ed0e0",
+        "running cpus": "#70DBED",
+        "total": "#705DA0",
+        "total cpus": "#806EB7"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 14,
+        "y": 5
+      },
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "total",
+          "fill": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(sumSeries(exclude(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus, 'test')), 'in_use')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev}.*.*.*.*.cpus_total), 'total')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPUs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "1-GPU jobs": "#628857",
+        "2-GPU jobs": "#cee8c4",
+        "3-GPU jobs": "#bcd8b2",
+        "4-GPU jobs": "#aac8a0",
+        "5-GPU jobs": "#98b88e",
+        "6-GPU jobs": "#86a87b",
+        "7-GPU jobs": "#749869",
+        "8-GPU jobs": "#e0f9d7",
+        "RUNNING CPUs": "#6ED0E0",
+        "allocated": "#EAB839",
+        "gpu:3": "#629e51",
+        "gpu:4": "#7eb26d",
+        "gpu:8": "#b7dbab",
+        "idle": "#7EB26D",
+        "in_use": "#967302",
+        "other": "#E24D42",
+        "running": "#6ED0E0",
+        "running cpus": "#70DBED",
+        "total": "rgb(120, 92, 1)",
+        "total cpus": "#806EB7"
+      },
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 19,
+        "y": 5
+      },
+      "id": 51,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": "",
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "total",
+          "fill": 1,
+          "stack": false
+        },
+        {
+          "alias": "in_use",
+          "fill": 0,
+          "stack": false
+        },
+        {
+          "alias": "gpu:1",
+          "color": "#3f6833"
+        },
+        {
+          "alias": "gpu:2",
+          "color": "#508642"
+        },
+        {
+          "alias": "gpu:4",
+          "color": "#629e51"
+        },
+        {
+          "alias": "gpu:6",
+          "color": "#7eb26d"
+        },
+        {
+          "alias": "gpu:8",
+          "color": "#9ac48a"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 1,
+          "refId": "L",
+          "target": "sortByName(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.gpu:*.RUNNING.gpus, 7, 'sum'), 'true')",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "N",
+          "target": "alias(sumSeries(#L), 'in_use')",
+          "targetFull": "alias(sumSeries(sortByName(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.gpu:*.RUNNING.gpus, 7, 'sum'), 'true')), 'in_use')",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:4.nodes.*), 4)",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "B",
+          "target": "scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:8.nodes.*), 8)",
+          "textEditor": false
+        },
+        {
+          "refCount": 1,
+          "refId": "C",
+          "target": "alias(sumSeries(#A, #B), 'total')",
+          "targetFull": "alias(sumSeries(scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:4.nodes.*), 4), scale(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.gpu:8.nodes.*), 8)), 'total')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "GPUs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.83)",
+        "rgba(45, 142, 172, 0.87)"
+      ],
+      "editable": true,
+      "error": false,
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 10,
+        "y": 11
+      },
+      "id": 20,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "asPercent(sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.normal.*.*.*.*.cpus.allocated, '5min')), #B)",
+          "targetFull": "asPercent(sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.normal.*.*.*.*.cpus.allocated, '5min')), sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.normal.*.*.*.*.cpus_total, '5min')))",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "B",
+          "target": "sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.normal.*.*.*.*.cpus_total, '5min'))",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "Running CPUs (normal)",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                150
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "B",
+                "10m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "10m",
+        "frequency": "60s",
+        "handler": 1,
+        "message": "More than 150 nodes are in `COMPLETING` state.",
+        "name": "Completing nodes",
+        "noDataState": "keep_state",
+        "notifications": [
+          {
+            "id": 3
+          }
+        ]
+      },
+      "aliasColors": {
+        "CPUs": "#6ED0E0",
+        "CPUs (normal)": "#6ED0E0",
+        "Nodes": "#705DA0",
+        "Nodes (normal)": "#705DA0",
+        "completing": "#e0752d",
+        "down": "#7eb26d",
+        "drained": "#eab839",
+        "draining": "#65c5db",
+        "draining@": "#614d93",
+        "nodes (normal)": "#705DA0",
+        "nodes normal": "#806EB7",
+        "normal": "#6ED0E0",
+        "srcc.sherlock2.slurm.alloc.cpucnt.normal": "#1F78C1"
+      },
+      "bars": true,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 3,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 0,
+        "y": 12
+      },
+      "id": 17,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": "144",
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "/^(?!completing)/",
+          "transform": "negative-Y"
+        },
+        {
+          "alias": "completing",
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sumSeriesWithWildcards(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.*.nodes.{down*,drain*,completing*,reboot*}, 4, 5, 6, 7, 8))"
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,gpu,bigmem,owners,dev,test}.*.*.*.*.nodes.completing))"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 150,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Unavailable nodes",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "bigmem": "#447EBC",
+        "dev": "#967302",
+        "diffenbaugh": "#9AC48A",
+        "gpu": "#1F78C1",
+        "kornberg": "#629E51",
+        "mcovert": "#508642",
+        "normal": "#5195CE",
+        "owners": "#0A50A1",
+        "pande": "#BADFF4",
+        "pending": "#E24D42",
+        "pending jobs": "#E24D42",
+        "rondror": "#806EB7",
+        "running": "#6ED0E0",
+        "running jobs": "#6ED0E0",
+        "russpold": "#CFFAFF",
+        "slac": "#AEA2E0",
+        "total": "#890f02",
+        "whwong": "#2F575E"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 14,
+        "y": 12
+      },
+      "id": 12,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "total",
+          "fill": 0,
+          "lines": false,
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 1,
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs), 'running')",
+          "textEditor": false
+        },
+        {
+          "refCount": 1,
+          "refId": "B",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.PENDING.jobs), 'pending')"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(sumSeries(#A, #B), 'total')",
+          "targetFull": "alias(sumSeries(alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs), 'running'), alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.PENDING.jobs), 'pending')), 'total')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "jobs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "jobs",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.83)",
+        "rgba(45, 142, 172, 0.87)"
+      ],
+      "editable": true,
+      "error": false,
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 10,
+        "y": 15
+      },
+      "id": 37,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "asPercent(sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.owners.*.*.*.*.cpus.allocated, '5min')), #B)",
+          "targetFull": "asPercent(sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.owners.*.*.*.*.cpus.allocated, '5min')), sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.owners.*.*.*.*.cpus_total, '5min')))",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": -1,
+          "refId": "B",
+          "target": "sumSeries(movingAverage(srcc.sherlock2.slurm.sinfo.owners.*.*.*.*.cpus_total, '5min'))",
+          "textEditor": false
+        }
+      ],
+      "thresholds": "20,50",
+      "title": "Running CPUs (owners)",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {
+        "COMPLETING": "#f9934e",
+        "CONFIGURING": "#629e51",
+        "PENDING": "#3f2b5b",
+        "RUNNING": "#6ed0e0"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "fill": 5,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 19
+      },
+      "id": 36,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.*.jobs, 8, 'sum')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "job states",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": null,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 8,
+        "y": 19
+      },
+      "id": 54,
+      "links": [],
+      "options": {
+        "displayMode": "basic",
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 10000,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "purple",
+                "value": null
+              },
+              {
+                "color": "blue",
+                "value": 550
+              },
+              {
+                "color": "green",
+                "value": 1000
+              }
+            ],
+            "title": "",
+            "unit": "none"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.3.5",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasSub(highestCurrent(sortBy(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 6, 'sumSeries'), 'last', true), 5), '6', '')",
+          "textEditor": false
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top partitions by running jobs",
+      "type": "bargauge"
+    },
+    {
+      "cacheTimeout": null,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 12,
+        "y": 19
+      },
+      "id": 56,
+      "links": [],
+      "options": {
+        "displayMode": "basic",
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 256,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "dark-purple",
+                "value": null
+              },
+              {
+                "color": "purple",
+                "value": 24
+              },
+              {
+                "color": "blue",
+                "value": 48
+              },
+              {
+                "color": "green",
+                "value": 96
+              }
+            ]
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.3.5",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "A",
+          "target": "sortByName(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus, 6, 'sumSeries'), false)",
+          "textEditor": false
+        },
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "B",
+          "target": "sortByName(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 6, 'sumSeries'), false)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(highestCurrent(sortBy(divideSeriesLists(#A, #B), 'last', true), 5))",
+          "targetFull": "aliasByMetric(highestCurrent(sortBy(divideSeriesLists(sortByName(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus, 6, 'sumSeries'), false), sortByName(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 6, 'sumSeries'), false)), 'last', true), 5))",
+          "textEditor": false
+        }
+      ],
+      "title": "Top partitions by average running job size",
+      "type": "bargauge"
+    },
+    {
+      "aliasColors": {
+        "COMPLETING": "#f9934e",
+        "CONFIGURING": "#629e51",
+        "PENDING": "#3f2b5b",
+        "RUNNING": "#6ed0e0"
+      },
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "fill": 5,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 19
+      },
+      "id": 52,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": "144",
+      "nullPointMode": "null as zero",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.PENDING.reasons.*.jobs, 10, 'sum')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "job pending reasons",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "cacheTimeout": "3600",
+      "cards": {
+        "cardPadding": null,
+        "cardRound": null
+      },
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateSpectral",
+        "exponent": 0.5,
+        "max": null,
+        "min": null,
+        "mode": "spectrum"
+      },
+      "dataFormat": "tsbuckets",
+      "description": "",
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 8,
+        "y": 24
+      },
+      "heatmap": {},
+      "hideTimeOverride": true,
+      "hideZeroBuckets": false,
+      "highlightCards": true,
+      "id": 57,
+      "legend": {
+        "show": false
+      },
+      "links": [],
+      "maxDataPoints": "",
+      "options": {},
+      "reverseYBuckets": false,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": -1,
+          "refId": "A",
+          "target": "alias(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.*.jobs), 'jobs')",
+          "textEditor": false
+        }
+      ],
+      "timeFrom": "30d",
+      "timeShift": null,
+      "title": "",
+      "tooltip": {
+        "show": true,
+        "showHistogram": false
+      },
+      "tooltipDecimals": null,
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "xBucketNumber": null,
+      "xBucketSize": null,
+      "yAxis": {
+        "decimals": 0,
+        "format": "none",
+        "logBase": 1,
+        "max": null,
+        "min": null,
+        "show": true,
+        "splitFactor": null
+      },
+      "yBucketBound": "middle",
+      "yBucketNumber": null,
+      "yBucketSize": null
+    },
+    {
+      "aliasColors": {
+        "CPUs": "#6ED0E0",
+        "CPUs (normal)": "#6ED0E0",
+        "Nodes": "#705DA0",
+        "Nodes (normal)": "#705DA0",
+        "nodes (normal)": "#705DA0",
+        "nodes normal": "#806EB7",
+        "normal": "#6ED0E0",
+        "srcc.sherlock2.slurm.alloc.cpucnt.normal": "#1F78C1"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 27
+      },
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "sumSeries(srcc.sherlock2.slurm.sinfo.normal.*.*.*.allocated)",
+          "yaxis": 2
+        },
+        {
+          "alias": "nodes normal",
+          "yaxis": 2
+        },
+        {
+          "alias": "CPUs (normal)",
+          "yaxis": 1
+        },
+        {
+          "alias": "nodes (normal)",
+          "yaxis": 2
+        },
+        {
+          "alias": "Nodes (normal)",
+          "yaxis": 2
+        },
+        {
+          "alias": "Nodes",
+          "yaxis": 2
+        },
+        {
+          "alias": "percent of total CPUs",
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "hide": true,
+          "refId": "A",
+          "target": "sumSeries(srcc.sherlock2.slurm.sinfo.normal.*.*.*.*.nodes.{allocated,mixed,completing,draining})"
+        },
+        {
+          "hide": false,
+          "refId": "B",
+          "target": "alias(divideSeries(sumSeries(srcc.sherlock2.slurm.sinfo.normal.*.*.*.*.cpus.allocated), #A), 'allocated cpus/nodes')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Sherlock: average allocated CPUs per allocated Node",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "none",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "CPUs": "#6ED0E0",
+        "CPUs (normal)": "#6ED0E0",
+        "Nodes": "#705DA0",
+        "Nodes (normal)": "#705DA0",
+        "nodes (normal)": "#705DA0",
+        "nodes normal": "#806EB7",
+        "normal": "#6ED0E0",
+        "percent of total CPUs": "#BF1B00",
+        "percent of total nodes": "#6ED0E0",
+        "srcc.sherlock2.slurm.alloc.cpucnt.normal": "#1F78C1"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 27
+      },
+      "id": 1,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "A",
+          "target": "sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,bigmem,gpu,owners}.*.*.*.*.nodes_total)"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(scale(divideSeries(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,bigmem,gpu,owners}.*.*.*.*.nodes.allocated), #A), 100), 'percent of total nodes')",
+          "targetFull": "alias(scale(divideSeries(sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,bigmem,gpu,owners}.*.*.*.*.nodes.allocated), sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,bigmem,gpu,owners}.*.*.*.*.nodes_total)), 100), 'percent of total nodes')"
+        },
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "C",
+          "target": "sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,bigmem,gpu,owners}.*.*.*.*.cpus_total)"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(scale(divideSeries(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus), #C), 100), 'percent of total CPUs')",
+          "targetFull": "alias(scale(divideSeries(sumSeries(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.cpus), sumSeries(srcc.sherlock2.slurm.sinfo.{normal,dev,bigmem,gpu,owners}.*.*.*.*.cpus_total)), 100), 'percent of total CPUs')"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "allocated resources",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": "",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "percent",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "editable": true,
+      "error": false,
+      "fill": 0,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 34
+      },
+      "id": 3,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "highestMax(groupByNode(srcc.sherlock2.slurm.squeue.*.*.*.*.PENDING.jobs, 6, 'sum'), 10)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Top 10 partitions per pending jobs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "editable": true,
+      "error": false,
+      "fill": 0,
+      "fillGradient": 0,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 34
+      },
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "hideEmpty": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "hide": false,
+          "refId": "A",
+          "target": "groupByNode(highestMax(srcc.sherlock2.slurm.squeue.*.*.*.*.RUNNING.jobs, 10), 6, 'sumSeries')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Top 10 partitions by running jobs",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 19,
+  "style": "dark",
+  "tags": [
+    "slurm",
+    "sherlock 2.0"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "normal",
+          "value": "normal"
+        },
+        "datasource": "Graphite",
+        "definition": "",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "partition",
+        "options": [
+          {
+            "selected": false,
+            "text": "arend",
+            "value": "arend"
+          },
+          {
+            "selected": false,
+            "text": "dev",
+            "value": "dev"
+          },
+          {
+            "selected": false,
+            "text": "mrivas",
+            "value": "mrivas"
+          },
+          {
+            "selected": true,
+            "text": "normal",
+            "value": "normal"
+          },
+          {
+            "selected": false,
+            "text": "owners",
+            "value": "owners"
+          },
+          {
+            "selected": false,
+            "text": "pande",
+            "value": "pande"
+          },
+          {
+            "selected": false,
+            "text": "pritch",
+            "value": "pritch"
+          }
+        ],
+        "query": "srcc.sherlock2.slurm.squeue.*.*.*",
+        "refresh": 0,
+        "regex": "/(^[^,]+$)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "now": true,
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d",
+      "2M",
+      "3M"
+    ],
+    "type": "timepicker"
+  },
+  "timezone": "browser",
+  "title": "Sherlock 2.0 Slurm",
+  "uid": "000000109",
+  "version": 112
+}
