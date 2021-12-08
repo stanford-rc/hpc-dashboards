@@ -83,6 +83,8 @@ class SQueueHdlr(EventHandler):
     def ev_read(self, worker):
         """read line from squeue command"""
         try:
+            # workaround to fix unsetted GRES
+            worker.current_msg = re.sub('  ', ' (null) ', worker.current_msg)
             # workaround for Slurm 18
             worker.current_msg = re.sub(' +', ' ', worker.current_msg)
             #
@@ -178,6 +180,7 @@ class SDiagHdlr(EventHandler):
             # Data since      Sun Jun 21 17:00:00 2015
             'thread_count':     re.compile(r"Server thread count:\s*(?P<thread_count>\d*)"),
             'agent_queue_size': re.compile(r"Agent queue size:\s*(?P<agent_queue_size>\d*)"),
+            'dbd_agent_queue_size': re.compile(r"DBD Agent queue size:\s*(?P<dbd_agent_queue_size>\d*)"),
             'jobs.submitted':   re.compile(r"Jobs submitted:\s*(?P<submitted>\d*)"),
             'jobs.started':     re.compile(r"Jobs started:\s*(?P<started>\d*)"),
             'jobs.completed':   re.compile(r"Jobs completed:\s*(?P<completed>\d*)"),
@@ -227,10 +230,11 @@ class SDiagHdlr(EventHandler):
             'last_queue_length': re.compile(r"\s*Last queue length:\s*(?P<last_queue_length>\d*)"),
             'queue_length_mean': re.compile(r"\s*Queue length mean:\s*(?P<queue_length_mean>\d*)"),
         }
-        #TODO
-        #self.sched_rpc_bytype_patterns = {
+        self.sched_rpc_patterns = {
             # REQUEST_PARTITION_INFO    ( 2009) count:4559   ave_time:17809  total_time:81192898
-        #}
+            # me      (    42) count:82847  ave_time:1215627 total_time:100711095646
+            'type': re.compile(r"\s*(?P<type>\S+)\s*\(\s*\d*\) count:(?P<count>\d*)\s*ave_time:(?P<ave_time>\d*)\s*total_time:(?P<total_time>\d*)"),
+        }
 
     def ev_read(self, worker):
         """read line from sinfo command"""
@@ -240,6 +244,10 @@ class SDiagHdlr(EventHandler):
             self.section = "sdiag.scheduler.main"
         elif msg.startswith("Backfilling stats"):
             self.section = "sdiag.scheduler.backfill"
+        elif msg.startswith("Remote Procedure Call statistics by message type"):
+            self.section = "sdiag.scheduler.rpc"
+        elif msg.startswith("Remote Procedure Call statistics by user"):
+            self.section = "sdiag.scheduler.user_rpc"
 
         # Handle section specific content
         if self.section == "sdiag":
@@ -274,6 +282,14 @@ class SDiagHdlr(EventHandler):
                                                fun(match.group(key)), now())
                     print(carbon_prefix(out))
 
+        elif self.section in ["sdiag.scheduler.rpc", "sdiag.scheduler.user_rpc"]:
+            for key, pat in self.sched_rpc_patterns.items():
+                match = pat.match(msg)
+                if match:
+                    for match_k, match_v in match.groupdict().items():
+                        if match_k != key:
+                            out = "%s.%s.%s %s %d" % (self.section, match.group(key).lower(), match_k, match_v, now())
+                            print(carbon_prefix(out))
 
 
 class SInfoHdlr(EventHandler):
@@ -422,7 +438,7 @@ def main():
     task = task_self()
     task.set_default('stdout_msgtree', False)
     # Schedule slurm commands with related handler
-    task.shell("squeue -rh -o '%g %u %P %16b %T %C %D %R'", handler=SQueueHdlr(),
+    task.shell("squeue -rh --noconvert -o '%g %u %P %b %T %C %D %R'", handler=SQueueHdlr(),
                stderr=True)
     task.shell("sdiag", handler=SDiagHdlr(),
                stderr=True)
